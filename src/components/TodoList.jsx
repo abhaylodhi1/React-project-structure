@@ -1,40 +1,43 @@
-import React, { useState } from "react";
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { fetchPosts, addPost, deletePost, editPost } from "../api/api";
-
+import React, { useState } from 'react';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { fetchPosts, addPost, deletePost, editPost } from '../api/api';
 
 const TodoList = () => {
   const queryClient = useQueryClient();
-  const [newPostTitle, setNewPostTitle] = useState("");
+  const [newPostTitle, setNewPostTitle] = useState('');
   const [editingPost, setEditingPost] = useState(null);
-  const [editPostTitle, setEditPostTitle] = useState("");
+  const [editPostTitle, setEditPostTitle] = useState('');
 
-  const { data: posts, isLoading, isError } = useQuery({
-    queryKey: ["posts"],
+  const {
+    data: posts,
+    isLoading,
+    isError,
+  } = useQuery({
+    queryKey: ['posts'],
     queryFn: fetchPosts,
   });
 
   const addPostMutation = useMutation({
     mutationFn: addPost,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["posts"] });
-      setNewPostTitle("");
+      queryClient.invalidateQueries({ queryKey: ['posts'] });
+      setNewPostTitle('');
     },
   });
 
   const deletePostMutation = useMutation({
     mutationFn: deletePost,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["posts"] });
+      queryClient.invalidateQueries({ queryKey: ['posts'] });
     },
   });
 
   const editPostMutation = useMutation({
     mutationFn: editPost,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["posts"] });
+      queryClient.invalidateQueries({ queryKey: ['posts'] });
       setEditingPost(null);
-      setEditPostTitle("");
+      setEditPostTitle('');
     },
   });
 
@@ -84,14 +87,31 @@ const TodoList = () => {
                   value={editPostTitle}
                   onChange={(e) => setEditPostTitle(e.target.value)}
                 />
-                <button className="update-btn" onClick={handleUpdatePost}>Update</button>
-                <button className="cancel-btn" onClick={() => setEditingPost(null)}>Cancel</button>
+                <button className="update-btn" onClick={handleUpdatePost}>
+                  Update
+                </button>
+                <button
+                  className="cancel-btn"
+                  onClick={() => setEditingPost(null)}
+                >
+                  Cancel
+                </button>
               </div>
             ) : (
               <div>
                 {post.title}
-                <button className="edit-btn" onClick={() => handleEditPost(post)}>Edit</button>
-                <button className="delete-btn" onClick={() => handleDeletePost(post.id)}>Delete</button>
+                <button
+                  className="edit-btn"
+                  onClick={() => handleEditPost(post)}
+                >
+                  Edit
+                </button>
+                <button
+                  className="delete-btn"
+                  onClick={() => handleDeletePost(post.id)}
+                >
+                  Delete
+                </button>
               </div>
             )}
           </li>
