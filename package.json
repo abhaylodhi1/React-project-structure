@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prepare": "npx husky"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.66.9",
