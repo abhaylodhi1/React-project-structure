@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+  .todo-container {
+    width: 50%;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  
+  .todo-container h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .todo-input {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .todo-input input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .todo-input button {
+    padding: 10px 15px;
+    background: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+  
+  .todo-input button:hover {
+    background: #218838;
+  }
+  
+ 
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    background: #fff;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .edit-input {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .edit-input input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .edit-input button {
+    padding: 8px 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+  
+  .edit-input .update-btn {
+    background: #007bff;
+    color: white;
+  }
+  
+  .edit-input .update-btn:hover {
+    background: #0056b3;
+  }
+  
+  .edit-input .cancel-btn {
+    background: #dc3545;
+    color: white;
+  }
+  
+  .edit-input .cancel-btn:hover {
+    background: #c82333;
+  }
+  
+  button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+  
+  button.edit-btn {
+    background: #ffc107;
+    color: black;
+  }
+  
+  button.edit-btn:hover {
+    background: #e0a800;
+  }
+  
+  button.delete-btn {
+    background: #dc3545;
+    color: white;
+  }
+  
+  button.delete-btn:hover {
+    background: #c82333;
+  }
+  
