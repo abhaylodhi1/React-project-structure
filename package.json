@@ -33,10 +33,13 @@
     "prettier": "3.5.2",
     "vite": "^6.2.0"
   },
+
+
+  
   "lint-staged": {
-  "**/*.{js,jsx}": [
-    "prettier --write",
-    "eslint --fix"
-  ]
-}
+    "**/*.{js,jsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
 }
