@@ -5,7 +5,6 @@ import { fetchPosts, addPost, deletePost, editPost } from '../api/api';
 const TodoList = () => {
   const queryClient = useQueryClient();
   const [newPostTitle, setNewPostTitle] = useState('');
-
   const [editingPost, setEditingPost] = useState(null);
   const [editPostTitle, setEditPostTitle] = useState('');
 
