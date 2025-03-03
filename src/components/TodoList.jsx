@@ -1,7 +1,8 @@
-import { fetchPosts, addPost, deletePost, editPost } from '../api/api';
-import { useState } from 'react';
-import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useMutation } from '@tanstack/react-query';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { useState } from 'react';
+
+import { addPost, deletePost, editPost, fetchPosts } from '../api/api';
 
 const TodoList = () => {
   const queryClient = useQueryClient();
